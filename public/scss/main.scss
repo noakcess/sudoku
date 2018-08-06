@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box !important;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+body {
+    padding: 5px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    @include desktop() { padding: 40px; margin: 0; }
+}
+
+a {
+    color: #00B7FF;
+}
+#map {
+    position: relative;
+}
+.element {
+    position: absolute;
+}
+
+.row.board, .col.board {
+    margin: auto;
+    .cell {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 20pt;
+        &.set {
+            background: green;
+            color: white;
+        }
+        &.correct {
+            background: green;
+        }
+        &.incorrect {
+            background: red;
+        }
+        &:after {
+            content: attr(data-visible);
+            position: absolute;
+            left: 40%;
+            top: 25%;
+            //-webkit-transition: opacity 1.5s, top 1.5s, left 1.5s, font-size 1.5s; /* Safari */
+            //transition: opacity 1.5s, top 1.5s, left 1.5s, font-size 1.5s;
+        }
+        &:before {
+            position: absolute;
+            font-size: 15px;
+            content: attr(data-value);
+            opacity: .2;
+            margin: 5px;
+            left: 0;
+            top: 0;
+        }
+        &.default {
+            color: blue !important;
+        }
+        //&.focus:not(.incorrect) {
+        //    &:after {
+        //        display: none;
+        //    }
+        //}
+        .overlay {
+            //position: absolute;
+            //top: 0;
+            //left: 0;
+            margin: -10px;
+            background: #FFF;
+            opacity: 1;
+            z-index: 9999;
+            .row {
+                .option {
+                    height: 33% !important;
+                    width: 33% !important;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+}
+.col_3, .col_6 {
+    border-right: 2px solid black;
+}
+.row_3, .row_6 {
+    border-bottom: 2px solid black;
+}
+

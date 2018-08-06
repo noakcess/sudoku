@@ -1,0 +1,29 @@
+extends ./layout.pug
+
+block content
+    div.debug
+        .container-fluid.sudoku.board(style='display:none;')
+            - var count = 1
+            - var row = 1
+            while row <= 9
+                - var col = 1
+                .row.board()
+                    while col <= 9
+                        - var cell = 'cell_' + row + '_' + col
+                            +makeCell({index: count++, row: row, col: col})
+                        - col++
+                    - count = 1
+                    -row++
+        .container-fluid.overlay(style='display:none;')
+            - count = 1
+            - var row  = 1
+            while row <= 3
+                .row()
+                    - var col = 1
+                    while col <= 3
+                        .option(data-value=count) !{count++}
+                        - col++
+                - row++
+            script.
+                APP.init();
+

@@ -1,0 +1,25 @@
+$screen-xs-max: 767px;
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
+$screen-xlg-min: 1600px;
+@mixin phone() { @media (max-width: $screen-xs-max) { @content; } }
+@mixin tablet() { @media (min-width: $screen-sm-min) { @content; } }
+@mixin laptop() { @media (min-width: $screen-md-min) { @content; } }
+@mixin desktop() { @media (min-width: $screen-lg-min) { @content; } }
+@mixin desktop-lg() { @media (min-width: $screen-xlg-min) { @content; } }
+
+/*  @include desktop() { padding: 0; margin: 0; }*/
+
+@mixin first-child() { &:first-of-type { @content } }
+/* @include first-child() { background: red; } */
+@mixin last-child() { &:last-of-type { @content } }
+/* @include last-child() { background: red; }   */
+@mixin even() { &:nth-child(even) { @content } }
+/* @include evens() { background: red; }    */
+@mixin odd(){ &:nth-child(odd) { @content } }
+/*  @include odd() { background: red; }     */
+@mixin each($num) { &:nth-child(#{$num}n) { @content } }
+/*  @include each(3) { background: red; } */

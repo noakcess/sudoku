@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    #app.container-fluid
+        .row
+            .col-xs-12
+                .btn.btn-primary(data-action='build.sudoku') Sudoku
+                input.tries(value=0)
+        .row
+            include sudoku
+    script.
+        APP.init();

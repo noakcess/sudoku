@@ -1,0 +1,28 @@
+
+
+mixin makeCell(options)
+    - var row = options.row
+    - var col = options.col
+    - var index = options.index
+
+    if(_.indexOf([1,2,3], index) != -1)
+        if (row <= 3)
+            .cell.group_a(group='a', col=col, row=row, class='col_' + col + ' row_' + row, title='a'+ col + ':' + row)
+        else if(row <= 6)
+            .cell.group_d(group='d', col=col, row=row, class='col_' + col + ' row_' + row, title='d'+ col + ':' + row)
+        else
+            .cell.group_g(group='g', col=col, row=row, class='col_' + col + ' row_' + row, title='g' + col + ':' + row)
+    else if(_.indexOf([4,5,6], index) != -1)
+        if (row <= 3)
+            .cell.group_b(group='b', col=col, row=row, class='col_' + col + ' row_' + row, title='b' + col + ':' + row)
+        else if(row <= 6)
+            .cell.group_e(group='e', col=col, row=row, class='col_' + col + ' row_' + row, title='e' + col + ':'+ row)
+        else
+            .cell.group_h(group='h', col=col, row=row, class='col_' + col + ' row_' + row, title='h' + col + ':' + row)
+    else if(_.indexOf([7,8,9], index) != -1)
+        if (row <= 3)
+            .cell.group_c(group='c', col=col, row=row, class='col_' + col + ' row_' + row, title='c' + col + ':' + row)
+        else if(row <= 6)
+            .cell.group_f(group='f', col=col, row=row, class='col_' + col + ' row_' + row, title='f' + col + ':' + row)
+        else
+            .cell.group_i(group='i', col=col, row=row, class='col_' + col + ' row_' + row, title='i' + col + ':' + row)

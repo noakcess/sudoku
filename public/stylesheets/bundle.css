@@ -1,0 +1,118 @@
+/*  @include desktop() { padding: 0; margin: 0; }*/
+/* @include first-child() { background: red; } */
+/* @include last-child() { background: red; }   */
+/* @include evens() { background: red; }    */
+/*  @include odd() { background: red; }     */
+/*  @include each(3) { background: red; } */
+.debug * {
+  box-shadow: 0 0 0 1px gray !important; }
+
+.debug div {
+  box-shadow: 0 0 0 1px red !important; }
+
+.debug span {
+  box-shadow: 0 0 0 1px green !important; }
+
+.debug img {
+  box-shadow: 0 0 0 1px blue !important; }
+
+.debug ul {
+  box-shadow: 0 0 0 1px orange !important; }
+
+.debug li {
+  box-shadow: 0 0 0 1px black !important; }
+
+.debug a {
+  box-shadow: 0 0 0 1px purple !important; }
+
+.debug .fa {
+  box-shadow: 0 0 0 1px #489fdf !important; }
+
+.debug .row {
+  border-bottom: 2px dashed black !important; }
+
+.debug .wrapper {
+  box-shadow: 0 0 0 1px lightgray !important; }
+
+.debug canvas {
+  box-shadow: 0 0 0 1px #C7854B !important; }
+
+* {
+  box-sizing: border-box !important;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */ }
+
+body {
+  padding: 5px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  @media (min-width: 1200px) {
+    body {
+      padding: 40px;
+      margin: 0; } }
+
+a {
+  color: #00B7FF; }
+
+#map {
+  position: relative; }
+
+.element {
+  position: absolute; }
+
+.row.board, .col.board {
+  margin: auto; }
+  .row.board .cell, .col.board .cell {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20pt; }
+    .row.board .cell.set, .col.board .cell.set {
+      background: green;
+      color: white; }
+    .row.board .cell.correct, .col.board .cell.correct {
+      background: green; }
+    .row.board .cell.incorrect, .col.board .cell.incorrect {
+      background: red; }
+    .row.board .cell:after, .col.board .cell:after {
+      content: attr(data-visible);
+      position: absolute;
+      left: 40%;
+      top: 25%; }
+    .row.board .cell:before, .col.board .cell:before {
+      position: absolute;
+      font-size: 15px;
+      content: attr(data-value);
+      opacity: .2;
+      margin: 5px;
+      left: 0;
+      top: 0; }
+    .row.board .cell.default, .col.board .cell.default {
+      color: blue !important; }
+    .row.board .cell .overlay, .col.board .cell .overlay {
+      margin: -10px;
+      background: #FFF;
+      opacity: 1;
+      z-index: 9999; }
+      .row.board .cell .overlay .row .option, .col.board .cell .overlay .row .option {
+        height: 33% !important;
+        width: 33% !important;
+        cursor: pointer; }
+
+.col_3, .col_6 {
+  border-right: 2px solid black; }
+
+.row_3, .row_6 {
+  border-bottom: 2px solid black; }

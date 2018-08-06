@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+    <script src="/bower_components/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/vendor/jqtouch/jqtouch.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/javascripts/bundle.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        APP.ready(function () {
+            APP.init();
+        });
+    </script>
+
+</head>
+<body>
+
+<div id="jqt">
+    <div id="home" class="edgetoedge current">
+        <div class="toolbar">
+            <h1>Home</h1>
+            <a class="button slide" id="infoButton" href="#about">About</a>
+        </div>
+        <ul class="edgetoedge">
+            <li><a href="#mailbox">Home</a></li>
+        </ul>
+    </div>
+    <div id="about">
+        <div class="toolbar">
+            <a href="#" class="back button">Home</a>
+            <h1>About</h1>
+        </div>
+        <div class="info">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet euismod venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse laoreet, dui et elementum elementum, nibh neque laoreet dolor, vel malesuada nunc lorem in turpis.
+        </div>
+    </div>
+    <div id="mailbox" class="edgetoedge">
+        <div class="toolbar">
+            <a href="#" class="back button">Accounts</a>
+            <h1>Work</h1>
+        </div>
+        <ul class="edgetoedge">
+            <li><a href="#messages">Inbox</a></li>
+            <li><a href="#messages">Drafts</a></li>
+            <li><a href="#messages">Sent</a></li>
+            <li><a href="#messages">Trash</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
